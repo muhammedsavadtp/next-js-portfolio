@@ -49,3 +49,11 @@ Use the contact form to get in touch with me.
 - App website: https://www.my-nextjs-app.com
 - GitHub repository: https://github.com/my-nextjs-app
 - Issue tracker: https://github.com/my-nextjs-app/issues
+
+## Changelog
+
+1. Create next js app 
+2. Initialize git 
+   - add remote 
+   - push to github
+3. Install tailwind css 
