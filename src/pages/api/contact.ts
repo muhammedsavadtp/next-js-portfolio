@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import { mailOptions, transporter } from "../../../config/nodemailer";
 
@@ -6,24 +5,46 @@ type Data = {
   message: string;
 };
 
-
-const CONTACT_MESSAGE_FILEDS = {
+const CONTACT_MESSAGE_FIELDS = {
   fullName: "Name",
   email: "Email",
   subject: "Subject",
   message: "Message",
 };
 
-const genarateEmailContent = (data:any) => {
+const generateEmailContent = (data: any) => {
   const stringData = Object.entries(data).reduce((str, [key, val]) => {
-    return (str += `${CONTACT_MESSAGE_FILEDS[key]}: \n ${val} \n`);
+    return (str += `${CONTACT_MESSAGE_FIELDS[key]}: \n ${val} \n`);
   }, "");
-  const htmlData = Object.entries(data).reduce((str, [key, val]) => {
-    return (str += `<h1>${CONTACT_MESSAGE_FILEDS[key]}</h1><p>${val}</p>`);
-  }, "");
+
+  const htmlTemplate = `
+    <html>
+      <head>
+        <style>
+          h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          p {
+            font-size: 16px;
+            margin-bottom: 20px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>New Contact Form Submission</h1>
+        <p><strong>Name:</strong> ${data.fullName}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Subject:</strong> ${data.subject}</p>
+        <p><strong>Message:</strong> ${data.message}</p>
+      </body>
+    </html>
+  `;
+
   return {
     text: stringData,
-    html: htmlData,
+    html: htmlTemplate,
   };
 };
 
@@ -37,14 +58,16 @@ export default async function handler(
     try {
       await transporter.sendMail({
         ...mailOptions,
-        from: data.mail,
-        ...genarateEmailContent(data),
+        from: data.email,
+        ...generateEmailContent(data),
         subject: data.subject,
       });
-    } catch (error:any) {
+      return res.status(200).json({ message: "Message sent successfully!" });
+    } catch (error) {
       console.log(error);
-      return res.status(400).json({ message: error.message });
+      return res.status(500).json({ message: "Failed to send message." });
     }
+  } else {
+    return res.status(400).json({ message: "Bad request." });
   }
-  return res.status(400).json({ message: "Bad request" });
 }
