@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-}
+  experimental: {
+    appDir: true,
+  },
+  // images: {
+  //   domains: ["https://www.sendnotice.in/assets/images/contactus.svg"],
+  // },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

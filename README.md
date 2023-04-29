@@ -19,7 +19,7 @@ I used Visual Studio Code as my development environment and Git for version cont
 2. React
 3. Tailwind CSS
 4. EmailJS
-5. Netlify Forms
+5. Netlify Forms 
 
 I followed a component-based approach to development and used Tailwind CSS for styling. I also used EmailJS and Netlify Forms to create contact forms for my visitors to get in touch with me.
 
