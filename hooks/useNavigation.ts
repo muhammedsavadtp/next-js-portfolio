@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const useNavigation = () => {
-  const [activeItem, setActiveItem] = useState("Home");
+  // const [activeItem, setActiveItem] = useState("Home");
 
   const menuItems = [
     { name: "Home", route: "home" },
@@ -10,11 +10,11 @@ const useNavigation = () => {
     { name: "Contact", route: "contact" },
   ];
 
-  const handleItemClick = (name: string) => {
-    setActiveItem(name);
-  };
+  // const handleItemClick = (name: string) => {
+  //   setActiveItem(name);
+  // };
 
-  return { activeItem, menuItems, handleItemClick };
+  return {  menuItems,  };
 };
 
 export default useNavigation;

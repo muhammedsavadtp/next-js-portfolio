@@ -2,13 +2,19 @@ import React, { useState } from "react";
 import { FiGithub } from "react-icons/fi";
 import types from "../utils/types";
 
-const Card = ({ url, heading, paragraph }: types) => {
+const Card = ({ url, heading, paragraph,webUrl,git }: types) => {
   const [active, setActive] = useState(false);
   console.log(active);
 
+  const handleClick = (url:any) => {
+    window.location.href = url;
+  };
+
   return (
     <div className="w-full md:w-1/2 lg:w-1/3 px-4 mb-4 ">
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden  h-full   ">
+      <div
+        className={` bg-white dark:bg-gray-800/30 rounded-lg shadow-lg overflow-hidden  h-full `}
+      >
         <div className="p-4 relative">
           <div
             onMouseEnter={() => setActive(true)}
@@ -23,11 +29,17 @@ const Card = ({ url, heading, paragraph }: types) => {
               height={360}
             />
             {active && (
-              <div className="absolute w-full bg-black h-full right-0 top-0  flex justify-center items-center gap-2 ">
-                <div className="hover:bg-gray-100 cursor-pointer h-16 w-16 bg-white  rounded-md text-black flex justify-center items-center">
+              <div className="absolute w-full bg-black opacity-90 h-full right-0 top-0  flex justify-center items-center gap-2 ">
+                <div
+                  onClick={() => handleClick(git)}
+                  className="hover:bg-gray-100 cursor-pointer  h-16 w-16 bg-white  rounded-md text-black flex justify-center items-center"
+                >
                   <FiGithub />
                 </div>
-                <div className="hover:bg-gray-100 cursor-pointer h-16 w-16 bg-white  rounded-md text-black flex justify-center items-center">
+                <div
+                  onClick={() => handleClick(webUrl)}
+                  className="hover:bg-gray-100 cursor-pointer h-16 w-16 bg-white  rounded-md text-black flex justify-center items-center"
+                >
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -48,7 +60,7 @@ const Card = ({ url, heading, paragraph }: types) => {
 
         <div className="p-4">
           <h2 className="text-lg font-semibold mb-2">{heading}</h2>
-          <p className="text-gray-700 leading-relaxed mb-2">{paragraph}</p>
+          <p className=" leading-relaxed mb-2">{paragraph}</p>
         </div>
       </div>
     </div>

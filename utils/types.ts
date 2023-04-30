@@ -4,7 +4,7 @@ export default interface types {
   description: string;
   fields: { [key: string]: any };
   methods: { [key: string]: any };
-  url: string;
+  url: any;
   heading: string;
   paragraph: string;
   e: any;
@@ -13,5 +13,7 @@ export default interface types {
   title: string;
   image: string;
   items: any;
-  data:any
+  data: any;
+  webUrl: string;
+  git: string;
 }

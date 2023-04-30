@@ -4,6 +4,7 @@ import Hero from "../../components/Hero";
 import Layout from "../../components/Layout";
 import Portfolio from "../../components/Portfolio";
 import data from "../../utils/userData";
+
 export default function Home() {
   return (
     <>

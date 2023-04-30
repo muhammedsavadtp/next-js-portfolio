@@ -56,8 +56,8 @@ const Contact = () => {
           <div className="md:w-1/2 px-4">
             <h1 className="text-2xl font-base mb-4">Get in touch</h1>
             <p className="mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-              vestibulum sapien vel massa laoreet congue.
+              My inbox is always open. Whether you have a question or just want
+              to say hello, I will try my best to get back to you!
             </p>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">

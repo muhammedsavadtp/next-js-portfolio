@@ -2,16 +2,22 @@ export const cardContent = [
   {
     title: "Netflix",
     description: "The world's most popular movie-making platform.",
-    url: "/public/images/netflix.png",
+    url: "images/netflix.png",
+    webUrl: "https://muhammedsavadtp.github.io/netflix-clone-app/",
+    git: "https://github.com/muhammedsavadtp/netflix-clone-app",
   },
   {
     title: "olx",
     description: "The world's most popular open source software.",
-    url: "https://via.placeholder.com/640x360.png",
+    url: "images/olx.png",
+    webUrl: "https://muhammedsavadtp.github.io/olx-clone-app/",
+    git: "https://github.com/muhammedsavadtp/olx-clone-app",
   },
   {
     title: "shopping cart",
     description: "The world's most popular shopping cart.",
-    url: "https://via.placeholder.com/640x360.png",
+    url: "images/cartcastle.png",
+    webUrl: "https://cartcastle.vercel.app/",
+    git: "https://github.com/muhammedsavadtp/cartcastle",
   },
 ];
