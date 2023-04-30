@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import TechStack from "../components/TechStack";
-import types from "../utils/types";
 
-const About = ({data}:types) => {
+
+const About = ({data}:any) => {
   return (
     <section id="about">
       <div className="flex flex-col items-center justify-center min-h-screen w-full pt-8 mb-10 ">

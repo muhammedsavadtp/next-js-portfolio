@@ -5,14 +5,18 @@ type Data = {
   message: string;
 };
 
-const CONTACT_MESSAGE_FIELDS = {
+interface ContactMessageFields {
+  [key: string]: string;
+}
+
+const CONTACT_MESSAGE_FIELDS: ContactMessageFields = {
   fullName: "Name",
   email: "Email",
   subject: "Subject",
   message: "Message",
 };
 
-const generateEmailContent = (data: any) => {
+const generateEmailContent = (data: ContactMessageFields) => {
   const stringData = Object.entries(data).reduce((str, [key, val]) => {
     return (str += `${CONTACT_MESSAGE_FIELDS[key]}: \n ${val} \n`);
   }, "");
@@ -53,7 +57,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method === "POST") {
-    const data = req.body;
+    const data: ContactMessageFields = req.body;
 
     try {
       await transporter.sendMail({

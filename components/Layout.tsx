@@ -5,11 +5,10 @@ import useNavigation from "../hooks/useNavigation";
 import HamburgerMenu from "./HamburgerMenu";
 import useScrollDown from "../utils/scrollDown";
 import { Link as ScrollLink } from "react-scroll";
-import types from "../utils/types";
 import { useTheme } from "next-themes";
 
-const Layout = ({ title, children }: types) => {
-  const {  menuItems } = useNavigation();
+const Layout = ({ title, children }: any) => {
+  const { menuItems } = useNavigation();
   const scrollDown = useScrollDown();
 
   const { systemTheme, theme, setTheme } = useTheme();
@@ -71,7 +70,6 @@ const Layout = ({ title, children }: types) => {
                         smooth={true}
                         duration={500}
                         isDynamic={true}
-                       
                       >
                         {item.name}
                       </ScrollLink>
@@ -80,10 +78,7 @@ const Layout = ({ title, children }: types) => {
                 </ul>
               </div>
               <div className="flex items-center  ">
-                <div className="w-10 p-3 ">
-                  
-                {renderThemeChanger()}
-                 </div>
+                <div className="w-10 p-3 ">{renderThemeChanger()}</div>
 
                 <div className="relative h-10 w-6 md:hidden flex items-center">
                   <HamburgerMenu menuItems={menuItems} />

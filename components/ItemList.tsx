@@ -1,6 +1,6 @@
 import types from "../utils/types";
 
-function ItemList({ items }:types) {
+function ItemList({ items }:any) {
   return (
     <>
       {items.map(({ name, url }:types) => (

@@ -1,4 +1,11 @@
-const stacks = {
+type StackType = {
+  [key: string]: {
+    name: string;
+    url: string;
+  }[];
+};
+
+const stacks: StackType = {
   frontEnd: [
     {
       name: "JavaScript",
@@ -87,4 +94,4 @@ const stacks = {
   ],
 };
 
-export default stacks ;
+export default stacks;

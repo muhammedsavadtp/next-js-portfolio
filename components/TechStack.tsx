@@ -35,7 +35,6 @@ export default function MyTabs() {
               <Tab.Panels className={"mt-5 flex justify-center w-full"}>
                 {Object.keys(stacks).map((stackKey) => (
                   <Tab.Panel
-                    value={stackKey}
                     className={"flex items-center flex-wrap  "}
                     key={stackKey}
                   >

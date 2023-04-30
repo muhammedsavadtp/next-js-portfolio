@@ -2,9 +2,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
 import { FiMenu, FiX } from "react-icons/fi";
-import types from "../utils/types";
 
-const HamburgerMenu = ({ menuItems }:types) => {
+
+const HamburgerMenu = ({ menuItems }:any) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {

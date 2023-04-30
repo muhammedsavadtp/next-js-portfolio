@@ -2,10 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { Link as ScrollLink } from "react-scroll";
-import types from "../utils/types";
 import { useTheme } from "next-themes";
 
-const Hero = ({ data }: types) => {
+const Hero = ({ data }: any) => {
   const { theme } = useTheme();
 
  

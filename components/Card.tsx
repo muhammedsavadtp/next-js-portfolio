@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FiGithub } from "react-icons/fi";
 import types from "../utils/types";
 
-const Card = ({ url, heading, paragraph,webUrl,git }: types) => {
+const Card = ({ url, heading, paragraph,webUrl,git }: any) => {
   const [active, setActive] = useState(false);
   console.log(active);
 
