@@ -1,8 +1,20 @@
 import { motion } from "framer-motion";
 import TechStack from "../components/TechStack";
+import Instagram from "../assets/Instagram";
+import LinkedIn from "../assets/LinkedIn";
+import GitHub from "../assets/GitHub";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 
+const About = ({ data }: any) => {
+  const [themes, setTheme] = useState(null);
+  const { theme, systemTheme } = useTheme();
+  const currentTheme: any = theme === "system" ? systemTheme : theme;
+  useEffect(() => {
+    setTheme(currentTheme);
+  }, [currentTheme]);
 
-const About = ({data}:any) => {
   return (
     <section id="about">
       <div className="flex flex-col items-center justify-center min-h-screen w-full pt-8 mb-10 ">
@@ -30,6 +42,7 @@ const About = ({data}:any) => {
                   Resume
                 </button>
               </a>
+              {/* book a call */}
               {/* <button className="px-6 py-2 hover:bg-gray-100 dark:bg-violet-900/10 hover:dark:bg-violet-900/20 text-violet-500 rounded-md flex items-center justify-center gap-2">
                 Book a Call
                 <svg
@@ -45,6 +58,20 @@ const About = ({data}:any) => {
                   <path d="M19 19H5V5h7l-2-2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2v-5l-2-2v7z"></path>
                 </svg>
               </button> */}
+            </div>
+            {/* social media handles  */}
+            <div className="p-2  mt-10 flex gap-5 justify-center md:justify-start">
+              <Link href={"https://www.instagram.com/__.savad.__/"}>
+                <Instagram fill={themes !== "dark" ? "black" : "white"} />
+              </Link>
+              <Link href={"https://github.com/muhammedsavadtp"}>
+                <GitHub fill={themes !== "dark" ? "black" : "white"} />
+              </Link>
+              <Link
+                href={"https://www.linkedin.com/in/muhammed-savad-361a71241/"}
+              >
+                <LinkedIn fill={themes !== "dark" ? "black" : "white"} />
+              </Link>
             </div>
           </div>
         </div>
