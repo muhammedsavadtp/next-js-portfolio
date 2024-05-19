@@ -9,7 +9,7 @@ const data = {
   aboutMe: `self-taught Full Stack Developer with a specialization in the MERN stack. I possess a strong understanding of the latest technologies and am passionate about building scalable web applications. I have designed user interfaces using Figma and utilized frameworks like Next.js to optimize website performance. I have excellent communication skills and enjoy working collaboratively with a team to deliver high-quality projects. `,
   title: ["front end developer", "backend developer", "UI/UX designer"],
   homePageImage: "images/bmoji.png",
-  aboutPageImage: "images/mypic.jpg",
+  aboutPageImage: "images/btm1.png",
 };
 
 export default data;

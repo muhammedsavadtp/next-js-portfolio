@@ -4,6 +4,7 @@ import { sendContactForm } from "../lib/api";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import mailImage from '../public/images/sendMail.svg'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -46,12 +47,7 @@ const Contact = () => {
 
         <div className="container mx-auto my-8 md:flex">
           <div className="hidden md:block md:w-1/2 mb-4 md:mb-0">
-            <Image
-              src="https://www.sendnotice.in/assets/images/contactus.svg"
-              alt="Image"
-              width={500}
-              height={500}
-            />
+            <Image src={mailImage} alt="Image" width={500} height={500} />
           </div>
           <div className="md:w-1/2 px-4">
             <h1 className="text-2xl font-base mb-4">Get in touch</h1>

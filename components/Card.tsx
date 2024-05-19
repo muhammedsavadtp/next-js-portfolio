@@ -4,7 +4,7 @@ import types from "../utils/types";
 
 const Card = ({ url, heading, paragraph,webUrl,git }: any) => {
   const [active, setActive] = useState(false);
-  console.log(active);
+  // console.log(active);
 
   const handleClick = (url:any) => {
     window.location.href = url;

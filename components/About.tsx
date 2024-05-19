@@ -21,7 +21,7 @@ const About = ({ data }: any) => {
         <h1 className="text-4xl  text-center mb-6">About Me</h1>
         <div className="flex items-center  justify-between flex-col md:flex-row w-full  ">
           <motion.div
-            className="flex p-2 items-center mb-5 md:mb-0 w-56 h-80 bg-gray-50 rounded-lg shadow-md overflow-hidden hover:scale-105 transition-transform duration-300 ease-in-out"
+            className="flex p-2 items-center mb-5 md:mb-0 w-56 h-80  rounded-lg  overflow-hidden hover:scale-105 transition-transform duration-300 ease-in-out"
             whileHover={{ boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.3)" }}
           >
             <img
@@ -37,7 +37,7 @@ const About = ({ data }: any) => {
             </h3>
             <p className="text-base   md:text-base mt-4">{data.aboutMe}</p>
             <div className="mt-4 flex space-x-4">
-              <a href="pdf/Muhammed savad.pdf" download>
+              <a href="pdf/Muhammed-Savad-Resume.pdf" download>
                 <button className="px-6 py-2 bg-violet-700 hover:bg-violet-800 text-white rounded-md">
                   Resume
                 </button>
